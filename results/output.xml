@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2024-05-08T22:00:34.608856" rpa="false" schemaversion="5">
+<suite id="s1" name="Nos Testes API" source="C:\Nos_Testes_API">
+<suite id="s1-s1" name="Automation Testing" source="C:\Nos_Testes_API\automation_testing">
+<suite id="s1-s1-s1" name="Automation Testing" source="C:\Nos_Testes_API\automation_testing\automation_testing">
+<suite id="s1-s1-s1-s1" name="Tests" source="C:\Nos_Testes_API\automation_testing\automation_testing\tests">
+<suite id="s1-s1-s1-s1-s1" name="Test Case" source="C:\Nos_Testes_API\automation_testing\automation_testing\tests\test_case.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="Scenario: Create a New User" line="6">
+<kw name="Given Que acesso a API para criação de usuário" owner="validacoes">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-08T22:00:34.964790" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-08T22:00:34.964790" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-05-08T22:00:34.964790" elapsed="0.000000"/>
+</kw>
+<kw name="When Informo os campos obrigatórios" owner="validacoes">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-08T22:00:34.981810" level="INFO">${data} = {'id': '6895773', 'name': 'Agnimitra Shukla', 'email': 'agnimitra_shukla@hane.example', 'gender': 'female', 'status': 'active.'}</msg>
+<var>${data}</var>
+<arg>id=6895773</arg>
+<arg>name=Agnimitra Shukla</arg>
+<arg>email=agnimitra_shukla@hane.example</arg>
+<arg>gender=female</arg>
+<arg>status=active.</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-08T22:00:34.980849" elapsed="0.000961"/>
+</kw>
+<status status="PASS" start="2024-05-08T22:00:34.964790" elapsed="0.017753"/>
+</kw>
+<kw name="Then O usuário é cadastrado com sucesso" owner="validacoes">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-05-08T22:00:34.989344" level="FAIL">Non-existing index or alias 'https://gorest.co.in/'.</msg>
+<var>${response}</var>
+<arg>${URL}</arg>
+<arg>${ENDPOINT_CRIAR}</arg>
+<arg>json=${data}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2024-05-08T22:00:34.989216" elapsed="0.009882">Non-existing index or alias 'https://gorest.co.in/'.</status>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${response}</arg>
+<arg>201</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2024-05-08T22:00:34.999098" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${data}</var>
+<arg>value</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2024-05-08T22:00:34.999098" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Sub Dictionary" owner="Collections">
+<arg>${response.json()}</arg>
+<arg>${data}</arg>
+<doc>Fails unless all items in ``dict2`` are found from ``dict1``.</doc>
+<status status="NOT RUN" start="2024-05-08T22:00:34.999098" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-05-08T22:00:34.986604" elapsed="0.012494">Non-existing index or alias 'https://gorest.co.in/'.</status>
+</kw>
+<doc>Testa a criação de um novo usuário com POST.</doc>
+<status status="FAIL" start="2024-05-08T22:00:34.964790" elapsed="0.044912">Non-existing index or alias 'https://gorest.co.in/'.</status>
+</test>
+<status status="FAIL" start="2024-05-08T22:00:34.653847" elapsed="0.359855"/>
+</suite>
+<status status="FAIL" start="2024-05-08T22:00:34.650849" elapsed="0.362853"/>
+</suite>
+<status status="FAIL" start="2024-05-08T22:00:34.646458" elapsed="0.367244"/>
+</suite>
+<status status="FAIL" start="2024-05-08T22:00:34.643453" elapsed="0.381917"/>
+</suite>
+<status status="FAIL" start="2024-05-08T22:00:34.614852" elapsed="0.413514"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Nos Testes API">Nos Testes API</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Automation Testing">Nos Testes API.Automation Testing</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Automation Testing">Nos Testes API.Automation Testing.Automation Testing</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="Tests">Nos Testes API.Automation Testing.Automation Testing.Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1-s1" name="Test Case">Nos Testes API.Automation Testing.Automation Testing.Tests.Test Case</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-05-08T22:00:34.660067" level="ERROR">Error in file 'C:\Nos_Testes_API\automation_testing\automation_testing\resources\tasks\validacoes.resource' on line 64: Creating keyword 'Excluo um usuário existente' failed: Keyword with same name defined multiple times.</msg>
+<msg time="2024-05-08T22:00:34.662028" level="ERROR">Error in file 'C:\Nos_Testes_API\automation_testing\automation_testing\resources\tasks\validacoes.resource' on line 79: Creating keyword ' Dictionary Should Contain Key With Value' failed: Invalid argument specification: Multiple errors:
+- Invalid argument syntax 'due_on'.
+- Invalid argument syntax '2024-05-13T00:00:00.000+05:30'.</msg>
+</errors>
+</robot>
